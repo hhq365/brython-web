@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Brython Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.10.4/brython.min.js"></script>
+</head>
+
+<body onload="brython()">
+  <script type="text/python">
+    from browser import document, alert
+
+    def echo(event):
+        alert(document["zone"].value)
+
+    document["mybutton"].bind("click", echo)
+  </script>
+
+  <input id="zone">
+  <button id="mybutton">click!</button>
+</body>
+</html>
